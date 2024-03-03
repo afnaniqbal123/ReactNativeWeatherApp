@@ -9,7 +9,10 @@ export const api = createApi({
     getWeather: builder.query({
       query: (city) => `current.json?key=${apiKey}&q=${city}`,
     }),
+    getForecast: builder.query({
+      query: (city) => `forecast.json?key=${apiKey}&q=${city}`,
+    }),
   }),
 });
 
-export const { useGetWeatherQuery } = api;
+export const { useGetWeatherQuery, useGetForecastQuery } = api;
